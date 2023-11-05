@@ -1,0 +1,11 @@
+// 	instalar	 o	gerador	do	Express
+npm	 install	 express-generator	 -g	 
+
+change directory:
+     > cd tarefas
+
+   install dependencies:
+     > npm install
+
+   run the app:
+     > SET DEBUG=tarefas:* & npm start
