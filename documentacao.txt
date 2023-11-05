@@ -9,3 +9,44 @@ change directory:
 
    run the app:
      > SET DEBUG=tarefas:* & npm start
+
+mover	o	arquivo	criado	na	pasta		bin	
+para	a	pasta	raiz	do	projeto,	
+renomeando-o	para		server.js
+
+após isso excluir a pasta bin
+
+Por	 conta	 desta	 alteração,	 dentro	 do	 arquivo	 	server.js	,
+precisamos	apontar	que	o	arquivo		app.js		agora	 se	encontra	no
+mesmo	diretório.	Para	isso,	alteramos	a	chamada	do	módulo		app	
+para		
+var	app	=	require('./app')	.
+
+Para	 iniciarmos	 nosso	 servidor	 e	 podermos	 monitorá-lo	 de
+acordo	 com	 cada	 alteração,	 vamos	instalar	 como	 dependência	 de
+desenvolvedor	no	nosso	projeto	o	módulo		nodemon	,	 a	 partir	 do
+comando		
+npm	install	--save-dev	nodemon
+
+altere o package.json para:
+{
+  "name": "tarefas",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./server"
+  },
+  "dependencies": {
+    "body-parser":"~1.16.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "serve-favicon":"~2.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
+
